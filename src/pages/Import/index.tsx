@@ -24,7 +24,7 @@ const Import: React.FC = () => {
 
   async function handleUpload(): Promise<void> {
     const data = new FormData();
-
+    // eslint-disable-next-line
     uploadedFiles.map(file => {
       data.append('file', file.file, file.name);
     });
