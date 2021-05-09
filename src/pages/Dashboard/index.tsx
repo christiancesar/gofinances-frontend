@@ -31,8 +31,8 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     async function loadTransactions(): Promise<void> {
       const response = await api.get('/transactions');
-      const transactionsData = response.data;
-      const balanceData = response.data;
+      const transactionsData = response.data.transactions;
+      const balanceData = response.data.balance;
       const transactionsFormatted = transactionsData.map(
         (transaction: Transaction) => ({
           ...transaction,
